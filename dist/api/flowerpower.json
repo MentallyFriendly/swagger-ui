@@ -120,7 +120,7 @@
        	"/user/purchases/{card_number}": {
             "get": {
                 "tags": [
-                    "User"
+                    "user"
                 ],
                 "consumes": [],
                 "produces": [
