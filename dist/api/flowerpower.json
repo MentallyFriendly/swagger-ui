@@ -117,7 +117,7 @@
                 }
             }
         },
-        "/user/purchases/{card_number}": {
+                "/user/purchases/{card_number}": {
             "get": {
                 "tags": [
                     "User"
@@ -193,7 +193,6 @@
                 }
             }
         }
-    },
     },
     "definitions": {
         "GLCVoucher": {
