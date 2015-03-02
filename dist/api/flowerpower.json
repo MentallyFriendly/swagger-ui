@@ -117,7 +117,83 @@
                 }
             }
         },
-        "/user/update": {}
+        "/user/purchases/{card_number}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/GLCPurchase"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/update": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Updates user information",
+                "description": "Updates user information",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/GLCUser"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "/user/voucher/{card_number}": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "{card_number}",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/GLCVoucher"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
     },
     "definitions": {
         "GLCVoucher": {
