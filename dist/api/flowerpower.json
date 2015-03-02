@@ -117,7 +117,7 @@
                 }
             }
         },
-                "/user/purchases/{card_number}": {
+       	"/user/purchases/{card_number}": {
             "get": {
                 "tags": [
                     "User"
@@ -141,7 +141,7 @@
         "/user/update": {
             "post": {
                 "tags": [
-                    "User"
+                    "user"
                 ],
                 "summary": "Updates user information",
                 "description": "Updates user information",
@@ -167,7 +167,7 @@
         "/user/voucher/{card_number}": {
             "get": {
                 "tags": [
-                    "User"
+                    "user"
                 ],
                 "consumes": [],
                 "produces": [
