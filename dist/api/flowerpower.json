@@ -1,247 +1,246 @@
 {
-	"swagger": "2.0",
-	"info": {
-		"description": "API to manage the Garden Lovers Club of the Flower Power Website",
-		"version": "1.0.0",
-		"title": "Flower Power",
-		"contact": {
-			"name": "API Team",
-			"url": "http://wordnik.com",
-			"email": "apiteam@wordnik.com"
-		},
-		"license": {
-			"name": "Mentally Friendly 2105",
-			"url": ""
-		}
-	},
-	"host": "flowerpower.com:443",
-	"basePath": "/api",
-	"schemes": [
-		"https"
-	],
-	"paths": {
-		"/user/activate/{card_number}": {
-			"get": {
-				"tags": [
-					"User"
-				],
-				"summary": "Returns",
-				"description": "Returns",
-				"consumes": [],
-				"produces": [
-					"application/json"
-				],
-				"parameters": [
-					{
-						"in": "path",
-						"name": "{card_Number}",
-						"required": true,
-						"type": "string"
-					}
-				],
-				"responses": {
-					"200": {
-						"schema": {
-							"$ref": "#/definitions/GLCUser"
-						}
-					}
-				}
-			}
-		},
-		"/user/authenticate/{email}": {
-			"get": {
-				"tags": [
-					"user"
-				],
-				"summary": "Get user by user name",
-				"description": "Get user by user name",
-				"operationId": "getUserByName",
-				"consumes": [],
-				"produces": [],
-				"parameters": [
-					{
-						"in": "path",
-						"name": "userlogin",
-						"description": "name that need to be deleted",
-						"required": true,
-						"type": "string"
-					}
-				],
-				"responses": {
-					"200": {
-						"description": "Success",
-						"schema": {
-							"$ref": "#/definitions/User"
-						}
-					}
-				}
-			}
-		},
-		"/user/create": {
-			"post": {
-				"tags": [
-					"user"
-				],
-				"summary": "Create user",
-				"description": "Create user",
-				"operationId": "createUser",
-				"consumes": [
-					"application/json"
-				],
-				"produces": [],
-				"parameters": [
-					{
-						"in": "body",
-						"name": "body",
-						"required": false,
-						"schema": {
-							"$ref": "GLCUser"
-						}
-					}
-				],
-				"responses": {
-					"200": {
-						"description": "Success",
-						"schema": {
-							"$ref": "#/definitions/card_number"
-						}
-					}
-				}
-			}
-		},
-		"/user/purchases/{card_number}": {
-			"get": {
-				"tags": [
-					"User"
-				],
-				"consumes": [],
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"schema": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/GLCPurchase"
-							}
-						}
-					}
-				}
-			}
-		},
-		"/user/update": {
-			"post": {
-				"tags": [
-					"User"
-				],
-				"summary": "Updates user information",
-				"description": "Updates user information",
-				"consumes": [
-					"application/json"
-				],
-				"produces": [],
-				"parameters": [
-					{
-						"in": "body",
-						"name": "body",
-						"required": false,
-						"schema": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/GLCUser"
-							}
-						}
-					}
-				]
-			}
-		},
-		"/user/voucher/{card_number}": {
-			"get": {
-				"tags": [
-					"User"
-				],
-				"consumes": [],
-				"produces": [
-					"application/json"
-				],
-				"parameters": [
-					{
-						"in": "path",
-						"name": "{card_number}",
-						"required": true,
-						"type": "string"
-					}
-				],
-				"responses": {
-					"200": {
-						"schema": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/GLCVoucher"
-							}
-						}
-					}
-				}
-			}
-		}
-	},
-	"definitions": {
-		"GLCVoucher": {
-			"properties": {
-				"barcode": {
-					"type": "string",
-					"example": "sample barcode"
-				},
-				"amount": {
-					"type": "number",
-					"format": "float",
-					"example": "1.1"
-				},
-				"start_date": {
-					"type": "string",
-					"format": "date"
-				},
-				"end_date": {
-					"type": "string",
-					"format": "date"
-				},
-				"status": {
-					"type": "string",
-					"example": "sample status",
-					"description": "active, used, expired"
-				}
-			},
-			"description": "Vouchers"
-		},
-		"GLCUser": {},
-		"GLCPurchase": {
-			"properties": {
-				"date": {
-					"type": "string",
-					"format": "date"
-				},
-				"store_name": {
-					"type": "string",
-					"example": "sample store_name"
-				},
-				"amount": {
-					"type": "number",
-					"format": "float",
-					"example": "1.1"
-				},
-				"points": {
-					"type": "integer",
-					"format": "int32",
-					"example": "1"
-				},
-				"purchase_id": {
-					"type": "integer",
-					"format": "int32",
-					"example": "1"
-				}
-			},
-			"description": "List of a users purchases"
-		}
-	}
+    "swagger": "2.0",
+    "info": {
+        "description": "API to manage the Garden Lovers Club of the Flower Power Website",
+        "version": "1.0.0",
+        "title": "Flower Power",
+        "contact": {
+            "name": "Jim Wild",
+            "url": "http://mentallyfriendly.com",
+            "email": "jim@mentallyfriendly.com"
+        },
+        "license": {
+            "name": "Mentally Friendly 2105"
+        }
+    },
+    "host": "flowerpower.com:443",
+    "basePath": "/api/v1",
+    "schemes": [
+        "https"
+    ],
+    "paths": {
+        "/user/getuserbycard/": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Returns user data from card number for validation",
+                "description": "Returns user data",
+                "operationId": "getUserByCardNumber",
+                "consumes": [],
+                "produces": [],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "card_number",
+                        "description": "Card Number",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/GLCUser"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/getuserbyemail/": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Returns user data from email address for validation",
+                "description": "Returns user data",
+                "operationId": "getUserByEmail",
+                "consumes": [],
+                "produces": [],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "email",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/GLCUser"
+                        }
+                    }
+                }
+            }
+        },
+        "/user/create": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Create user",
+                "description": "Create user",
+                "operationId": "createUser",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/GLCUser"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/GLCUser"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/update": {}
+    },
+    "definitions": {
+        "GLCVoucher": {
+            "properties": {
+                "barcode": {
+                    "type": "string",
+                    "example": "sample barcode"
+                },
+                "amount": {
+                    "type": "number",
+                    "format": "float",
+                    "example": "1.1"
+                },
+                "start_date": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "end_date": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "status": {
+                    "type": "string",
+                    "example": "sample status",
+                    "description": "active, used, expired"
+                }
+            },
+            "description": "Vouchers"
+        },
+        "GLCUser": {
+            "properties": {
+                "first_name": {
+                    "type": "string",
+                    "example": "sample first_name"
+                },
+                "last_name": {
+                    "type": "string",
+                    "example": "sample last_name"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "sample email"
+                },
+                "telephone": {
+                    "type": "string",
+                    "example": "sample telephone"
+                },
+                "mobile": {
+                    "type": "string",
+                    "example": "sample mobile"
+                },
+                "address_1": {
+                    "type": "string",
+                    "example": "sample address_1"
+                },
+                "suburb": {
+                    "type": "string",
+                    "example": "sample suburb"
+                },
+                "postcode": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": "1"
+                },
+                "prefered_store": {
+                    "type": "string",
+                    "example": "sample prefered_store"
+                },
+                "password": {
+                    "type": "string",
+                    "example": "sample password"
+                },
+                "points_balance": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": "1"
+                },
+                "date_of_birth": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "sex": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": "1"
+                },
+                "newsletter_optout": {
+                    "type": "boolean",
+                    "example": "false"
+                },
+                "promotion_optout": {
+                    "type": "boolean",
+                    "example": "false"
+                }
+            }
+        },
+        "GLCPurchase": {
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "store_name": {
+                    "type": "string",
+                    "example": "sample store_name"
+                },
+                "amount": {
+                    "type": "number",
+                    "format": "float",
+                    "example": "1.1"
+                },
+                "points": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": "1"
+                },
+                "purchase_id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "example": "1"
+                }
+            },
+            "description": "List of a users purchases"
+        }
+    }
 }
