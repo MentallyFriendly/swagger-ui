@@ -10,7 +10,7 @@
             "email": "jim@mentallyfriendly.com"
         },
         "license": {
-            "name": "Mentally Friendly 2105"
+            "name": "Mentally Friendly 2015"
         }
     },
     "host": "flowerpower.com:443",
@@ -19,7 +19,7 @@
         "https"
     ],
     "paths": {
-        "/user/getuserbycard/": {
+        "/user/getByCardNumber/": {
             "get": {
                 "tags": [
                     "user"
@@ -48,7 +48,7 @@
                 }
             }
         },
-        "/user/getuserbyemail/": {
+        "/user/getByEmail/": {
             "get": {
                 "tags": [
                     "user"
