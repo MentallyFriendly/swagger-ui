@@ -24,8 +24,8 @@
                 "tags": [
                     "user"
                 ],
-                "summary": "Updates user information",
-                "description": "Updates user information",
+                "summary": "Update user details",
+                "description": "Update user details",
                 "consumes": [
                     "application/json"
                 ],
@@ -50,8 +50,8 @@
                 "tags": [
                     "user"
                 ],
-                "summary": "Create user",
-                "description": "Create user",
+                "summary": "Create a new user",
+                "description": "Create a new user",
                 "operationId": "createUser",
                 "consumes": [
                     "application/json"
@@ -90,8 +90,8 @@
                 "tags": [
                     "user"
                 ],
-                "summary": "Returns user data from card number for validation",
-                "description": "Returns user data",
+                "summary": "Returns a user record for a GLC card number",
+                "description": "Returns a user record for a GLC card number",
                 "operationId": "getUserByCard",
                 "consumes": [],
                 "produces": [],
@@ -119,8 +119,8 @@
                 "tags": [
                     "user"
                 ],
-                "summary": "Returns user data from email address for validation",
-                "description": "Returns user data",
+                "summary": "Returns a user record for a GLC member email address",
+                "description": "Returns a user record for a GLC member email address",
                 "operationId": "getUserByEmail",
                 "consumes": [],
                 "produces": [],
@@ -149,6 +149,8 @@
                 "tags": [
                     "user"
                 ],
+                "summary": "Returns a collection of purchases for a user",
+                "description": "Returns a collection of purchases for a user",
                 "consumes": [],
                 "produces": [
                     "application/json"
@@ -170,6 +172,8 @@
                 "tags": [
                     "user"
                 ],
+                "summary": "Returns a collection of vouchers for a user",
+                "description": "Returns a collection of vouchers for user",
                 "consumes": [],
                 "produces": [
                     "application/json"
