@@ -19,6 +19,72 @@
         "https"
     ],
     "paths": {
+        "/user/update": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Updates user information",
+                "description": "Updates user information",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/GLCUser"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+       "/user/create": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Create user",
+                "description": "Create user",
+                "operationId": "createUser",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/GLCUser"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/GLCUser"
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/user/getByCardNumber/": {
             "get": {
                 "tags": [
@@ -77,46 +143,7 @@
                 }
             }
         },
-        "/user/create": {
-            "post": {
-                "tags": [
-                    "user"
-                ],
-                "summary": "Create user",
-                "description": "Create user",
-                "operationId": "createUser",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "required": false,
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/GLCUser"
-                            }
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Success",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/GLCUser"
-                            }
-                        }
-                    }
-                }
-            }
-        },
+
        	"/user/purchases/{card_number}": {
             "get": {
                 "tags": [
@@ -136,32 +163,6 @@
                         }
                     }
                 }
-            }
-        },
-        "/user/update": {
-            "post": {
-                "tags": [
-                    "user"
-                ],
-                "summary": "Updates user information",
-                "description": "Updates user information",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [],
-                "parameters": [
-                    {
-                        "in": "body",
-                        "name": "body",
-                        "required": false,
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/definitions/GLCUser"
-                            }
-                        }
-                    }
-                ]
             }
         },
         "/user/voucher/{card_number}": {
