@@ -45,7 +45,7 @@
                 ]
             }
         },
-       "/user/create": {
+        "/user/create": {
             "post": {
                 "tags": [
                     "user"
@@ -80,6 +80,42 @@
                             "items": {
                                 "$ref": "#/definitions/GLCUser"
                             }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/login/": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "User login",
+                "description": "Depricated",
+                "operationId": "login",
+                "consumes": [],
+                "produces": [],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "username",
+                        "description": "User Name",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "password",
+                        "description": "Password",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/GLCUser"
                         }
                     }
                 }
@@ -143,8 +179,7 @@
                 }
             }
         },
-
-       	"/user/purchases/{card_number}": {
+        "/user/purchases/{card_number}/{page_number}/{per_page}": {
             "get": {
                 "tags": [
                     "user"
@@ -154,6 +189,26 @@
                 "consumes": [],
                 "produces": [
                     "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "{card_number}",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "{page_number}",
+                        "required": true,
+                        "type": "int"
+                    },
+                    {
+                        "in": "path",
+                        "name": "{per_page}",
+                        "required": true,
+                        "type": "int"
+                    }
                 ],
                 "responses": {
                     "200": {
@@ -167,7 +222,7 @@
                 }
             }
         },
-        "/user/voucher/{card_number}": {
+        "/user/voucher/{card_number}/{page_number}/{per_page}": {
             "get": {
                 "tags": [
                     "user"
@@ -184,6 +239,18 @@
                         "name": "{card_number}",
                         "required": true,
                         "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "{page_number}",
+                        "required": true,
+                        "type": "int"
+                    },
+                    {
+                        "in": "path",
+                        "name": "{per_page}",
+                        "required": true,
+                        "type": "int"
                     }
                 ],
                 "responses": {
